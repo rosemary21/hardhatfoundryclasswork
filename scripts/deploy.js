@@ -1,13 +1,11 @@
 const hre = require("hardhat");
 
 async function main() {
-  const greeting = "Hello from Celo Sepolia!";
-  const greeter = await hre.ethers.deployContract("Greeter", [greeting]);
+  const greeter = await hre.ethers.deployContract("Greeter");
   await greeter.waitForDeployment();
 
   const address = await greeter.getAddress();
   console.log(`Greeter deployed to: ${address}`);
-  console.log(`Initial greeting: ${greeting}`);
 }
 
 main().catch((error) => {

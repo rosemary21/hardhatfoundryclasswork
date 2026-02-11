@@ -9,7 +9,7 @@ contract DeployGreeter is Script {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
         vm.startBroadcast(deployerPrivateKey);
 
-        Greeter greeter = new Greeter("Hello from Celo Sepolia!");
+        Greeter greeter = new Greeter();
         console.log("Greeter deployed to:", address(greeter));
 
         vm.stopBroadcast();
